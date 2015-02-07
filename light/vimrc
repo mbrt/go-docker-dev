@@ -20,6 +20,7 @@ filetype plugin indent on    " required
 syntax on
 set ts=4
 set sw=4
+set number
 set cursorline
 set scrolloff=999
 

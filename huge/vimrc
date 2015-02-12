@@ -11,10 +11,12 @@ Plugin 'gmarik/Vundle.vim'
 " custom plugins
 Plugin 'fatih/vim-go'
 Plugin 'majutsushi/tagbar'
+Plugin 'shougo/neocomplete'
 
 " all of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+let g:neocomplete#enable_at_startup = 1
 
 " customizations
 syntax on

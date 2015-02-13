@@ -12,11 +12,41 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'fatih/vim-go'
 Plugin 'majutsushi/tagbar'
 Plugin 'shougo/neocomplete'
+Plugin 'scrooloose/nerdtree'
 
 " all of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 let g:neocomplete#enable_at_startup = 1
+
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds' : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+\ }
+
 
 " customizations
 syntax on
@@ -27,8 +57,12 @@ set cursorline
 set scrolloff=999
 
 " plugins customizations
+" open nerdtree
+nmap <F7> :NERDTreeToggle<CR>
 " open the tagbar
 nmap <F8> :TagbarToggle<CR>
+" get rid of nerd tree strange characters
+let g:NERDTreeDirArrows=0
 " show a list of interfaces which is implemented by the type under your cursor
 au FileType go nmap <Leader>s <Plug>(go-implements)
 " show type info for the word under your cursor

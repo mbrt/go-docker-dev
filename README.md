@@ -1,4 +1,4 @@
-# Description
+# go-vim Docker image
 This Docker image adds [Go](https://golang.org/) tools and [vim-go](https://github.com/fatih/vim-go) to the [official Go image](https://registry.hub.docker.com/_/golang/).
 
 ## Usage

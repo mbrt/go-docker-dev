@@ -1,5 +1,5 @@
 FROM golang:1.4.1-wheezy
-MAINTAINER Michele Bertasi version: 0.2
+MAINTAINER Michele Bertasi
 
 ADD vimrc /.vimrc
 
@@ -14,8 +14,8 @@ RUN apt-get update                                                      && \
         --enable-gui=no --without-x --prefix=/usr                       && \
     make VIMRUNTIMEDIR=/usr/share/vim/vim74                             && \
     make install                                                        && \
-    mkdir -p ~/.vim/bundle/Vundle.vim                                   && \
-    cd ~/.vim/bundle                                                    && \
+    mkdir -p /.vim/bundle                                               && \
+    cd  /.vim/bundle                                                    && \
     git clone --depth 1 https://github.com/gmarik/Vundle.vim.git        && \
     git clone --depth 1 https://github.com/fatih/vim-go.git             && \
     git clone --depth 1 https://github.com/majutsushi/tagbar.git        && \

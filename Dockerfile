@@ -1,4 +1,4 @@
-FROM golang:1.4.1-wheezy
+FROM golang:1.4.2-wheezy
 MAINTAINER Michele Bertasi
 
 ADD vimrc /.vimrc

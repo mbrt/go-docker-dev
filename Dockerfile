@@ -1,7 +1,8 @@
 FROM golang:1.4.2-wheezy
 MAINTAINER Michele Bertasi
 
-ADD vimrc /.vimrc
+ENV HOME /root
+ADD vimrc /root/.vimrc
 
 RUN apt-get update                                                      && \
     apt-get install -y ncurses-dev libtolua-dev exuberant-ctags         && \
@@ -14,8 +15,8 @@ RUN apt-get update                                                      && \
         --enable-gui=no --without-x --prefix=/usr                       && \
     make VIMRUNTIMEDIR=/usr/share/vim/vim74                             && \
     make install                                                        && \
-    mkdir -p /.vim/bundle                                               && \
-    cd  /.vim/bundle                                                    && \
+    mkdir -p ~/.vim/bundle                                              && \
+    cd  ~/.vim/bundle                                                   && \
     git clone --depth 1 https://github.com/gmarik/Vundle.vim.git        && \
     git clone --depth 1 https://github.com/fatih/vim-go.git             && \
     git clone --depth 1 https://github.com/majutsushi/tagbar.git        && \

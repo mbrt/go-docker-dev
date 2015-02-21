@@ -66,15 +66,16 @@ let g:NERDTreeDirArrows=0
 " show a list of interfaces which is implemented by the type under your cursor
 au FileType go nmap <Leader>s <Plug>(go-implements)
 " show type info for the word under your cursor
-au FileType go nmap <Leader>i <Plug>(go-info)
+au FileType go nmap <Leader>gi <Plug>(go-info)
 " open the relevant Godoc for the word under the cursor
 au FileType go nmap <Leader>gd <Plug>(go-doc)
 au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
-" jun Go commands
+" run Go commands
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
+au FileType go nmap <leader>i <Plug>(go-install)
 " open the definition/declaration in a new vertical, horizontal or tab for the
 " word under your cursor
 au FileType go nmap <Leader>ds <Plug>(go-def-split)

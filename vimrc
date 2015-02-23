@@ -55,14 +55,13 @@ set sw=4
 set number
 set cursorline
 set scrolloff=999
+set encoding=utf-8
 
 " plugins customizations
 " open nerdtree
 nmap <F7> :NERDTreeToggle<CR>
 " open the tagbar
 nmap <F8> :TagbarToggle<CR>
-" get rid of nerd tree strange characters
-let g:NERDTreeDirArrows=0
 " show a list of interfaces which is implemented by the type under your cursor
 au FileType go nmap <Leader>s <Plug>(go-implements)
 " show type info for the word under your cursor

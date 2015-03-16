@@ -2,7 +2,7 @@ FROM golang:1.4.2-wheezy
 MAINTAINER Michele Bertasi
 
 ENV HOME /root
-ADD vimrc /root/.vimrc
+ADD fs/ /
 
 RUN apt-get update                                                      && \
     apt-get install -y ncurses-dev libtolua-dev exuberant-ctags         && \
@@ -15,19 +15,22 @@ RUN apt-get update                                                      && \
         --enable-gui=no --without-x --prefix=/usr                       && \
     make VIMRUNTIMEDIR=/usr/share/vim/vim74                             && \
     make install                                                        && \
-    mkdir -p ~/.vim/bundle                                              && \
+    mkdir -p ~/.vim/bundle ~/.vim/colors                                && \
+    cd  ~/.vim/colors                                                   && \
+    curl -sLO "https://raw.githubusercontent.com/xlucas/go-vim-install/master/molokai.vim" && \
     cd  ~/.vim/bundle                                                   && \
     git clone --depth 1 https://github.com/gmarik/Vundle.vim.git        && \
     git clone --depth 1 https://github.com/fatih/vim-go.git             && \
     git clone --depth 1 https://github.com/majutsushi/tagbar.git        && \
     git clone --depth 1 https://github.com/Shougo/neocomplete.vim.git   && \
     git clone --depth 1 https://github.com/scrooloose/nerdtree.git      && \
+    git clone --depth 1 https://github.com/bling/vim-airline            && \
     vim +PluginInstall +GoInstallBinaries +qall                         && \
     go get golang.org/x/tools/cmd/godoc                                 && \
     mv /go/bin/* /usr/src/go/bin                                        && \
     rm -rf /go/src/* /go/pkg                                            && \
     rm -rf Vundle.vim/.git vim-go/.git tagbar/.git neocomplete.vim/.git && \
-    rm -rf nerdtree/.git                                                && \
+    rm -rf nerdtree/.git vim-airline/.git                               && \
     apt-get remove -y ncurses-dev                                       && \
     apt-get autoremove -y                                               && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*

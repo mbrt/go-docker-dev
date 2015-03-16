@@ -13,6 +13,7 @@ Plugin 'fatih/vim-go'
 Plugin 'majutsushi/tagbar'
 Plugin 'shougo/neocomplete'
 Plugin 'scrooloose/nerdtree'
+Plugin 'bling/vim-airline'
 
 " all of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -56,6 +57,7 @@ set number
 set cursorline
 set scrolloff=999
 set encoding=utf-8
+colorscheme molokai
 
 " plugins customizations
 " open nerdtree
@@ -90,3 +92,7 @@ let g:go_fmt_command = "goimports"
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
+
+" vim-airline
+set laststatus=2
+let g:bufferline_echo = 0

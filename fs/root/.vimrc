@@ -14,6 +14,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'shougo/neocomplete'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-fugitive'
 
 " all of your Plugins must be added before the following line
 call vundle#end()            " required

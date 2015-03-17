@@ -20,8 +20,36 @@ Plugin 'jistr/vim-nerdtree-tabs'
 " all of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+" general customizations
+syntax on
+set ts=4
+set sw=4
+set number
+set cursorline
+set scrolloff=999
+set encoding=utf-8
+colorscheme molokai
+
+" plugin customizations
+" neocomplete
 let g:neocomplete#enable_at_startup = 1
 
+" vim go
+" disable open browser after posting snippet
+let g:go_play_open_browser = 0
+" enable goimports
+let g:go_fmt_command = "goimports"
+" enable additional highlighting
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+
+" vim-airline
+set laststatus=2
+let g:bufferline_echo = 0
+
+" tagbar
 let g:tagbar_type_go = {
     \ 'ctagstype' : 'go',
     \ 'kinds' : [
@@ -51,21 +79,12 @@ let g:tagbar_type_go = {
 \ }
 
 
-" customizations
-syntax on
-set ts=4
-set sw=4
-set number
-set cursorline
-set scrolloff=999
-set encoding=utf-8
-colorscheme molokai
-
-" plugins customizations
-" open nerdtree
+" shortcuts remap
 nmap <F7> :NERDTreeTabsToggle<CR>
-" open the tagbar
 nmap <F8> :TagbarToggle<CR>
+nmap <C-Down> :tabprevious<CR>
+nmap <C-Up> :tabnext<CR>
+
 " show a list of interfaces which is implemented by the type under your cursor
 au FileType go nmap <Leader>s <Plug>(go-implements)
 " show type info for the word under your cursor
@@ -86,15 +105,3 @@ au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
 au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 " rename the identifier under the cursor to a new name
 au FileType go nmap <Leader>e <Plug>(go-rename)
-" disable open browser after posting snippet
-let g:go_play_open_browser = 0
-" enable goimports
-let g:go_fmt_command = "goimports"
-" enable additional highlighting 
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-
-" vim-airline
-set laststatus=2
-let g:bufferline_echo = 0

@@ -15,6 +15,7 @@ Plugin 'shougo/neocomplete'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
+Plugin 'jistr/vim-nerdtree-tabs'
 
 " all of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -62,7 +63,7 @@ colorscheme molokai
 
 " plugins customizations
 " open nerdtree
-nmap <F7> :NERDTreeToggle<CR>
+nmap <F7> :NERDTreeTabsToggle<CR>
 " open the tagbar
 nmap <F8> :TagbarToggle<CR>
 " show a list of interfaces which is implemented by the type under your cursor

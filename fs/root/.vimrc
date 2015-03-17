@@ -48,6 +48,7 @@ let g:go_highlight_structs = 1
 " vim-airline
 set laststatus=2
 let g:bufferline_echo = 0
+let g:airline#extensions#tabline#enabled = 1
 
 " tagbar
 let g:tagbar_type_go = {
@@ -80,10 +81,12 @@ let g:tagbar_type_go = {
 
 
 " shortcuts remap
+nmap <F2> :tabnew<CR>
+nmap <F3> :tabclose<CR>
 nmap <F7> :NERDTreeTabsToggle<CR>
 nmap <F8> :TagbarToggle<CR>
-nmap <C-Down> :tabprevious<CR>
-nmap <C-Up> :tabnext<CR>
+nmap <C-Left> :tabprevious<CR>
+nmap <C-Right> :tabnext<CR>
 
 " show a list of interfaces which is implemented by the type under your cursor
 au FileType go nmap <Leader>s <Plug>(go-implements)

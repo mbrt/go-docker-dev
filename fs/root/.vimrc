@@ -11,7 +11,7 @@ Plugin 'gmarik/Vundle.vim'
 " custom plugins
 Plugin 'fatih/vim-go'
 Plugin 'majutsushi/tagbar'
-Plugin 'shougo/neocomplete'
+Plugin 'shougo/neocomplete.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'

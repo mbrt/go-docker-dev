@@ -5,14 +5,16 @@ ENV HOME /root
 ADD fs/ /
 
 RUN apt-get update                                                      && \
-    apt-get install -y ncurses-dev libtolua-dev exuberant-ctags         && \
+    apt-get install -y ncurses-dev libtolua-dev exuberant-ctags            \
+        python-dev                                                      && \
     ln -s /usr/include/lua5.2/ /usr/include/lua                         && \
     ln -s /usr/lib/x86_64-linux-gnu/liblua5.2.so /usr/lib/liblua.so     && \
     cd /tmp                                                             && \
     hg clone https://code.google.com/p/vim/                             && \
     cd vim                                                              && \
     ./configure --with-features=huge --enable-luainterp                    \
-        --enable-gui=no --without-x --prefix=/usr                       && \
+        --enable-gui=no --without-x --prefix=/usr --enable-pythoninterp    \
+        --with-python-config-dir=/usr/lib/python2.7/config              && \
     make VIMRUNTIMEDIR=/usr/share/vim/vim74                             && \
     make install                                                        && \
     mkdir -p ~/.vim/bundle                                              && \
@@ -22,7 +24,7 @@ RUN apt-get update                                                      && \
     git clone --depth 1 https://github.com/majutsushi/tagbar.git        && \
     git clone --depth 1 https://github.com/Shougo/neocomplete.vim.git   && \
     git clone --depth 1 https://github.com/scrooloose/nerdtree.git      && \
-    git clone --depth 1 https://github.com/bling/vim-airline            && \
+    git clone --depth 1 https://github.com/bling/vim-airline.git        && \
     git clone --depth 1 https://github.com/tpope/vim-fugitive.git       && \
     git clone --depth 1 https://github.com/jistr/vim-nerdtree-tabs.git  && \
     git clone --depth 1 https://github.com/sjl/gundo.vim.git            && \

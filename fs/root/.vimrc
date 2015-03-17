@@ -16,6 +16,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'sjl/gundo.vim'
 
 " all of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -98,3 +99,6 @@ let g:go_highlight_structs = 1
 " vim-airline
 set laststatus=2
 let g:bufferline_echo = 0
+
+" gundo
+nmap <F5> :GundoToggle<CR>

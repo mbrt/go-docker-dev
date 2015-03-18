@@ -49,6 +49,7 @@ let g:go_highlight_structs = 1
 set laststatus=2
 let g:bufferline_echo = 0
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme = 'dark'
 
 " tagbar
 let g:tagbar_type_go = {

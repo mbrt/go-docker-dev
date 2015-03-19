@@ -16,6 +16,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'mbbill/undotree'
 
 " all of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -84,6 +85,7 @@ let g:tagbar_type_go = {
 " shortcuts remap
 nmap <F2> :tabnew<CR>
 nmap <F3> :tabclose<CR>
+nmap <F5> :UndotreeToggle<CR>
 nmap <F7> :NERDTreeTabsToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 nmap <C-Left> :tabprevious<CR>

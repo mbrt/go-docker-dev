@@ -1,5 +1,14 @@
 # go-vim Docker image
-This Docker image adds [Go](https://golang.org/) tools and [vim-go](https://github.com/fatih/vim-go) to the [official Go image](https://registry.hub.docker.com/_/golang/).
+This Docker image adds [Go](https://golang.org/) tools and the following vim plugins to the [official Go image](https://registry.hub.docker.com/_/golang/):
+
+* [vim-go](https://github.com/fatih/vim-go)
+* [tagbar](https://github.com/majutsushi/tagbar)
+* [neocomplete](https://github.com/Shougo/neocomplete)
+* [NERD Tree](https://github.com/scrooloose/nerdtree)
+* [vim-airline](https://github.com/bling/vim-airline)
+* [fugitive.vim](https://github.com/tpope/vim-fugitive)
+* [NERD Tree tabs](https://github.com/jistr/vim-nerdtree-tabs)
+* [undotree](https://github.com/mbbill/undotree)
 
 ## Usage
 

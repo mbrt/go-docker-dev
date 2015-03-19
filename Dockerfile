@@ -28,7 +28,7 @@ RUN apt-get update                                                      && \
     go get github.com/jstemmer/gotags                                   && \
     mv /go/bin/* /usr/src/go/bin                                        && \
 # add dev user
-    useradd dev                                                         && \
+    adduser dev --disabled-password --gecos ""                          && \
     echo "ALL            ALL = (ALL) NOPASSWD: ALL" >> /etc/sudoers     && \
     chown -R dev:dev /home/dev /go                                      && \
 # cleanup

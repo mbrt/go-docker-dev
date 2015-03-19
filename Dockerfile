@@ -35,7 +35,7 @@ RUN apt-get update                                                      && \
     rm -rf /go/src/* /go/pkg                                            && \
     apt-get remove -y ncurses-dev                                       && \
     apt-get autoremove -y                                               && \
-    apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*      && \
+    apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 USER dev
 ENV HOME /home/dev

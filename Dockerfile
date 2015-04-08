@@ -1,4 +1,4 @@
-FROM golang:1.4.2-wheezy
+FROM golang:wheezy
 MAINTAINER Michele Bertasi
 
 ADD fs/ /

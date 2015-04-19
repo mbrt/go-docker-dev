@@ -52,8 +52,9 @@ RUN mkdir -p ~/.vim/bundle                                              && \
     git clone --depth 1 https://github.com/tpope/vim-fugitive.git       && \
     git clone --depth 1 https://github.com/jistr/vim-nerdtree-tabs.git  && \
     git clone --depth 1 https://github.com/mbbill/undotree.git          && \
+    git clone --depth 1 https://github.com/Lokaltog/vim-easymotion.git  && \
     vim +PluginInstall +qall                                            && \
 # cleanup
     rm -rf Vundle.vim/.git vim-go/.git tagbar/.git neocomplete.vim/.git    \
         nerdtree/.git vim-airline/.git vim-fugitive/.git                   \
-        vim-nerdtree-tabs/.git undotree/.git
+        vim-nerdtree-tabs/.git undotree/.git vim-easymotion/.git

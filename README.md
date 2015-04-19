@@ -9,6 +9,7 @@ This Docker image adds [Go](https://golang.org/) tools and the following vim plu
 * [fugitive.vim](https://github.com/tpope/vim-fugitive)
 * [NERD Tree tabs](https://github.com/jistr/vim-nerdtree-tabs)
 * [undotree](https://github.com/mbbill/undotree)
+* [vim-easymotion](https://github.com/Lokaltog/vim-easymotion)
 
 ## Usage
 
@@ -16,7 +17,7 @@ Run this image from within your go workspace. You can than edit your project usi
 
 ```
 cd your/go/workspace
-docker run --rm -t -i -v `pwd`:/go mbrt/golang-vim-dev
+docker run --rm -tiv `pwd`:/go mbrt/golang-vim-dev
 ```
 
 ## Limitations

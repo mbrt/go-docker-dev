@@ -10,6 +10,7 @@ This Docker image adds [Go](https://golang.org/) tools and the following vim plu
 * [NERD Tree tabs](https://github.com/jistr/vim-nerdtree-tabs)
 * [undotree](https://github.com/mbbill/undotree)
 * [vim-easymotion](https://github.com/Lokaltog/vim-easymotion)
+* [NERD Commenter](https://github.com/scrooloose/nerdcommenter)
 
 ## Usage
 

@@ -18,6 +18,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'mbbill/undotree'
 Plugin 'Lokaltog/vim-easymotion'
+Plugin 'scrooloose/nerdcommenter'
 
 " all of your Plugins must be added before the following line
 call vundle#end()            " required

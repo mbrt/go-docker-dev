@@ -26,6 +26,7 @@ RUN apt-get update                                                      && \
     go get github.com/golang/lint/golint                                && \
     go get github.com/kisielk/errcheck                                  && \
     go get github.com/jstemmer/gotags                                   && \
+    mv /go/bin/* /usr/local/go/bin                                      && \
 # add dev user
     adduser dev --disabled-password --gecos ""                          && \
     echo "ALL            ALL = (ALL) NOPASSWD: ALL" >> /etc/sudoers     && \

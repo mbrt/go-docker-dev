@@ -10,7 +10,7 @@ RUN apt-get update                                                      && \
     ln -s /usr/lib/x86_64-linux-gnu/liblua5.2.so /usr/lib/liblua.so     && \
     cd /tmp                                                             && \
 # build and install vim
-    hg clone https://code.google.com/p/vim/                             && \
+    git clone https://github.com/vim/vim.git                            && \
     cd vim                                                              && \
     ./configure --with-features=huge --enable-luainterp                    \
         --enable-gui=no --without-x --prefix=/usr                       && \

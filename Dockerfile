@@ -1,4 +1,4 @@
-FROM golang:wheezy
+FROM golang:latest
 MAINTAINER Michele Bertasi
 
 ADD fs/ /
@@ -14,7 +14,7 @@ RUN apt-get update                                                      && \
     cd vim                                                              && \
     ./configure --with-features=huge --enable-luainterp                    \
         --enable-gui=no --without-x --prefix=/usr                       && \
-    make VIMRUNTIMEDIR=/usr/share/vim/vim74                             && \
+    make VIMRUNTIMEDIR=/usr/share/vim/vim80                             && \
     make install                                                        && \
 # get go tools
     go get golang.org/x/tools/cmd/godoc                                 && \
@@ -41,22 +41,6 @@ USER dev
 ENV HOME /home/dev
 
 # install vim plugins
-RUN mkdir -p ~/.vim/bundle                                              && \
-    cd  ~/.vim/bundle                                                   && \
-    git clone --depth 1 https://github.com/gmarik/Vundle.vim.git        && \
-    git clone --depth 1 https://github.com/fatih/vim-go.git             && \
-    git clone --depth 1 https://github.com/majutsushi/tagbar.git        && \
-    git clone --depth 1 https://github.com/Shougo/neocomplete.vim.git   && \
-    git clone --depth 1 https://github.com/scrooloose/nerdtree.git      && \
-    git clone --depth 1 https://github.com/bling/vim-airline.git        && \
-    git clone --depth 1 https://github.com/tpope/vim-fugitive.git       && \
-    git clone --depth 1 https://github.com/jistr/vim-nerdtree-tabs.git  && \
-    git clone --depth 1 https://github.com/mbbill/undotree.git          && \
-    git clone --depth 1 https://github.com/Lokaltog/vim-easymotion.git  && \
-    git clone --depth 1 https://github.com/scrooloose/nerdcommenter.git && \
-    vim +PluginInstall +qall                                            && \
-# cleanup
-    rm -rf Vundle.vim/.git vim-go/.git tagbar/.git neocomplete.vim/.git    \
-        nerdtree/.git vim-airline/.git vim-fugitive/.git                   \
-        vim-nerdtree-tabs/.git undotree/.git vim-easymotion/.git           \
-        nerdcommenter/.git
+RUN curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim && \
+    vim +PlugInstall +qall

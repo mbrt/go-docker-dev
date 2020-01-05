@@ -32,6 +32,7 @@ RUN go get golang.org/x/tools/cmd/godoc                                 && \
     go get github.com/kisielk/errcheck                                  && \
     go get github.com/jstemmer/gotags                                   && \
     go get github.com/tools/godep                                       && \
+    GO111MODULE=on go get golang.org/x/tools/gopls@latest               && \
     mv /go/bin/* /usr/local/go/bin                                      && \
 # cleanup
     rm -rf /go/src/* /go/pkg

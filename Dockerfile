@@ -17,7 +17,7 @@ RUN cd /tmp                                                             && \
     cd vim                                                              && \
     ./configure --with-features=huge --enable-luainterp                    \
         --enable-gui=no --without-x --prefix=/usr                       && \
-    make VIMRUNTIMEDIR=/usr/share/vim/vim81                             && \
+    make VIMRUNTIMEDIR=/usr/share/vim/vim82                             && \
     make install                                                        && \
 # cleanup
     rm -rf /tmp/* /var/tmp/*

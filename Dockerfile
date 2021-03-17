@@ -5,7 +5,7 @@ ADD fs/ /
 
 # install pagkages
 RUN apt-get update                                                      && \
-    apt-get install -y ncurses-dev libtolua-dev exuberant-ctags         && \
+    apt-get install -y ncurses-dev libtolua-dev exuberant-ctags gdb     && \
     ln -s /usr/include/lua5.2/ /usr/include/lua                         && \
     ln -s /usr/lib/x86_64-linux-gnu/liblua5.2.so /usr/lib/liblua.so     && \
 # cleanup
@@ -32,6 +32,7 @@ RUN go get golang.org/x/tools/cmd/godoc                                 && \
     go get github.com/kisielk/errcheck                                  && \
     go get github.com/jstemmer/gotags                                   && \
     go get github.com/tools/godep                                       && \
+    go get github.com/go-delve/delve/cmd/dlv                            && \
     GO111MODULE=on go get golang.org/x/tools/gopls@latest               && \
     mv /go/bin/* /usr/local/go/bin                                      && \
 # cleanup
